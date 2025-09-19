@@ -1,0 +1,1 @@
+All images are taken directly from https://www.allrecipes.com/, I do not own any of the images
