@@ -1,13 +1,33 @@
+const rockBtn = document.querySelector("#rock-button");
+const paperBtn = document.querySelector("#paper-button");
+const scissorsBtn = document.querySelector("#sciccors-button");
+
+rockBtn.addEventListener("click", () => {
+    playRound(1);
+});
+paperBtn.addEventListener("click", () => {
+    playRound(2);
+});
+scissorsBtn.addEventListener("click", () => {
+    playRound(3);
+});
+
+const computerChoiceDisplay = document.querySelector("#computer-pick");
+
+const roundDisplay = document.querySelector("#round-counter");
+const winnerDisplay = document.querySelector("#win-display");
+const scoreDisplay = document.querySelector("#score-counter");
+
 let humanScore = 0;
 let computerScore = 0;
 let round = 1;
 
-function getComputerChoice(){
-    return rand = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
-}
+roundDisplay.textContent = "Round " + round + "/5";
 
-function getHumanChoice(){
-    return Number(window.prompt("Round"+ round + "/5 type 1 for Rock | 2 for Paper | 3 for Scissors ", "Let's go!"));
+function getComputerChoice(){
+    rand = Math.floor(Math.random() * (3 - 1 + 1)) + 1;
+    computerChoiceDisplay.textContent = "The computer picked: " + transateChoice(rand);
+    return rand;
 }
 
 function transateChoice(choice){
@@ -18,53 +38,43 @@ function transateChoice(choice){
     }
 }
 
-function playRound(computer, human){
+function playRound(choice){
+    if (round == 5){
+        alert("the game is over!");
+    } 
+
+    computer = getComputerChoice();
+    human = choice;
+
+
     if (human > 3 || human < 1 || human == NaN){
         console.log("Invalid input! Draw!");
     }
     else if (human == computer){
-        console.log("You picked: " + transateChoice(human) + "! || The computer picked: " + transateChoice(computer) + "!");
-        console.log("no winner! Draw!");
+        winnerDisplay.textContent = "no winner! Draw!";
+        scoreDisplay.textContent = "Human: " + humanScore + " || computer: " + computerScore;
     }
     else if (human == 1 && computer == 2 ){
         computerScore++;
-        console.log("You picked: " + transateChoice(human) + "! || The computer picked: " + transateChoice(computer) + "!");
-        console.log("The computer won!");
+        winnerDisplay.textContent = "The computer won!";
+        scoreDisplay.textContent = "Human: " + humanScore + " || computer: " + computerScore;
     }
     else if (human == 2 && computer == 3){
         computerScore++;
-        console.log("You picked: " + transateChoice(human) + "! || The computer picked: " + transateChoice(computer) + "!");
-        console.log("The computer won!");
+        winnerDisplay.textContent = "The computer won!";
+        scoreDisplay.textContent = "Human: " + humanScore + " || computer: " + computerScore;
     }
     else if (human == 3 && computer == 1){
         computerScore++;
-        console.log("You picked: " + transateChoice(human) + "! || The computer picked: " + transateChoice(computer) + "!");
-        console.log("The computer won!");
+        winnerDisplay.textContent = "The computer won!";
+        scoreDisplay.textContent = "Human: " + humanScore + " || computer: " + computerScore;
     }
     else{
         humanScore++;
-        console.log("You picked: " + transateChoice(human) + "! || The computer picked: " + transateChoice(computer) + "!");
-        console.log("You won!");
+        winnerDisplay.textContent = "You won!";
+        scoreDisplay.textContent = "Human: " + humanScore + " || computer: " + computerScore;
     }
+
+    round++;
+    roundDisplay.textContent = "Round " + round + "/5";
 }
-
-function playGame(){
-    for(i = 0; i < 5; i++){
-
-        const computerChoice = getComputerChoice();
-        const humanChoice = getHumanChoice();
-
-        playRound(computerChoice, humanChoice);
-        console.log("the Score is you: " + humanScore + " || computer: " + computerScore);
-        round++;
-    }
-
-    if(humanScore < computerScore){
-        console.log("The computer won the game! :(");
-    }
-    else {
-        console.log("You won the game! :)")
-    }
-}
-
-playGame();

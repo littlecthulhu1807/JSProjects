@@ -3,10 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="./roPaSc.js"></script>
+    <title>Rock Paper Sciccors</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./roPaSc.js" defer></script>
 </head>
 <body>
+    <div class="top">
+        <h1>Rock Paper Scissors!</h1>
+        <p>The game goes for 5 rounds</p>
+    </div>
+
+    <div class="computer-selection">
+        <p id="computer-pick">The computer picked:</p>
+    </div>
+
+    <div class="outcome">
+        <p id="round-counter">Round x/x</p>
+        <p id="win-display">X Won!</p>
+        <p id="score-counter">The Score is: xxx</p>
+    </div>
     
+    <div class="player-selection">
+        <button id="rock-button">Rock</button>
+        <button id="paper-button">Paper</button>
+        <button id="sciccors-button">Sciccors</button>
+    </div>
 </body>
 </html>
