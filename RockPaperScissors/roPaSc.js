@@ -39,9 +39,16 @@ function transateChoice(choice){
 }
 
 function playRound(choice){
-    if (round == 5){
+
+    roundDisplay.textContent = "Round " + round + "/5";
+
+    if (round > 5){
         alert("the game is over!");
+        roundDisplay.textContent = "Round " + 5 + "/5";
+        return;
     } 
+
+    round++;
 
     computer = getComputerChoice();
     human = choice;
@@ -75,6 +82,4 @@ function playRound(choice){
         scoreDisplay.textContent = "Human: " + humanScore + " || computer: " + computerScore;
     }
 
-    round++;
-    roundDisplay.textContent = "Round " + round + "/5";
 }
