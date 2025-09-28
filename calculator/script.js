@@ -1,3 +1,4 @@
+//-------------------- Var Setup --------------------//
 const displayText = document.querySelector("#displayText");
 
 const clearButton = document.querySelector(".clearButton");
@@ -9,6 +10,8 @@ const operatorButtons = document.querySelectorAll(".operatorButton");
 let operator = null;
 let displayString = [null, null];
 
+//-------------------- Event Listeners  --------------------//
+
 operatorButtons.forEach((element) =>{
     //console.log(element.innerHTML);
     const oButton = element;
@@ -16,10 +19,8 @@ operatorButtons.forEach((element) =>{
 });
 
 numberButtons.forEach((element) =>{
-    //console.log(element.innerHTML);
     const nButton = element;
     nButton.addEventListener("click", () => {
-        //console.log(nButton.innerHTML);
         displayText.textContent = displayText.textContent + nButton.innerHTML;
     });
 });
@@ -27,9 +28,10 @@ numberButtons.forEach((element) =>{
 clearButton.addEventListener("click", clear);
 
 solveButton.addEventListener("click", () => {
-    //console.log("solve");
     calculate();
 });
+
+//-------------------- Functionallity --------------------//
 
 function calculate(){
     displayString = displayText.textContent.split(operator);
@@ -60,27 +62,17 @@ function clear(){
 }
 
 function addOperation(oButton){
-    if(operator == null){
+    const currentDisplay = displayText.textContent;
+    if(currentDisplay == ""){
+        return;
+    }
+    else if(operator == null && currentDisplay !== ""){
         displayText.textContent = displayText.textContent + oButton.innerHTML;
         operator = oButton.innerHTML;
     }
     else{
         calculate();
+        displayText.textContent = displayText.textContent + oButton.innerHTML;
+        operator = oButton.innerHTML;
     }
 }
-
-function add(a, b){
-    return a + b;
-};
-
-function subtract(a, b){
-    return a - b;
-};
-
-function multiply(a, b){
-    return a * b;
-};
-
-function divide(a, b){
-    return a / b;
-};
