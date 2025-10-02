@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Just a Form</title>
+
+    <link rel="stylesheet" href="./style.css">
+    <script src="./form.js" defer></script>
+</head>
+<body class="main-container">
+    <div class="left">
+        <div class="logo-container">
+            <img src="./images/odin-lined.png" alt="A stilized face of Odin" height="150px">
+            <p>Odin</p>
+        </div>
+        <div class="link-container">
+            Photo by <a href="https://unsplash.com/photos/water-falls-on-forest-hjW4o5XfCzc">Nathan Ziemanski</a> on <a href="https://unsplash.com/photos/water-falls-on-forest-hjW4o5XfCzc">Unsplash</a>
+        </div>
+
+    </div>
+
+    <div class="right">
+
+        <p class="upper-text">
+            This is not a real online Servive! But you can still sign up and send all that precious right to httpbin.com
+            This page is part of the Odin Project HTML, CSS, JS Guide. Check it out!
+        </p>
+        <p class="lower-text">Sign up! You know you want to</p>
+
+        <form action="">
+            <fieldset class="form-data">
+                <p>Let's do This!</p>
+                <div class="form-block">
+                    <div>
+                        <label for="f-n">First Name</label>
+                        <input type="text" name="firstName" id="f-n">
+                    </div>
+                    <div>
+                        <label for="l-n">Lirst Name</label>
+                        <input type="text" name="lastName" id="l-n">
+                    </div>
+                </div>
+
+                <div class="form-block">
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email">
+                    </div>
+                    <div>
+                        <label for="phone">Phone Number</label>
+                        <input type="text" name="phone" id="phone">
+                    </div>
+                </div>
+
+                <div class="form-block">
+                    <div>
+                        <label for="password">Password</label>
+                        <input type="password" name="password" id="password">
+                    </div>
+                    <div>
+                        <label for="cPassword">Conform Password</label>
+                        <input type="password" name="cPassword" id="cPassword">
+                    </div>
+                </div>
+
+            </fieldset>
+            <button type="submit">Create Account</button>
+        </form>
+
+        <div class="log-in">
+            <p>Already have an account? </p><a href=""> Log in</a>
+        </div>
+
+    </div>    
+</body>
+</html>

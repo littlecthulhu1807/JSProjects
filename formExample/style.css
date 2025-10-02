@@ -1,0 +1,192 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+:root{
+    --left-width: calc(100vw/3);
+    --right-width: calc(100vw - var(--left-width));
+    --transparent-gray: rgba(128, 128, 128, 0.5);
+    --off-white: rgb(220, 220, 220);
+
+    font-size: 16px;
+}
+
+.main-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+/* <--------------------left side--------------------> */
+.left{
+    height: 100vh;
+    width: var(--left-width);
+    background-image: url("./images/jungle.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-container{
+    width: 100%;
+    height: 200px;
+    background-color: var(--transparent-gray);
+
+    margin-top: 30vh;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+}
+
+.logo-container p{
+    font-size: 6rem;
+}
+
+.logo-container img{
+    height: 80%;
+    width: auto;
+}
+
+.link-container{
+    margin-bottom: 2vh;
+    background-color: var(--transparent-gray);
+    color: antiquewhite;
+}
+
+.link-container a:link{
+    color: antiquewhite;
+}
+
+.link-container a:visited{
+    color: antiquewhite;
+}
+
+.link-container a:hover{
+    color: wheat;
+}
+
+/* <--------------------Right side--------------------> */
+.right{
+    height: 100vh;
+    width: var(--right-width);
+    background-color: var(--off-white);
+}
+
+.upper-text{
+    padding-top: 20vh;
+    margin: 25px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.lower-text{
+    margin: 25px;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.form-data{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-color: white;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+}
+
+.form-data div{
+    margin: 5px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.form-block input{
+    border-radius: 3px;
+    border: 1px solid black;
+}
+
+.form-block input:focus{
+    box-shadow: 2px 2px 5px black;
+    border: 2px solid blue;
+}
+
+.form-data p{
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+.form-block{
+    display: flex;
+}
+
+#password:invalid{
+    border: 2px solid red;
+}
+
+#cPassword:invalid{
+    border: 2px solid red;
+}
+
+.form-block div{
+    margin-left: 0px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    font-size: 0.7rem;
+    font-weight: 300;
+}
+
+form button{
+    width: 200px;
+    height: 50px;
+    background-color: forestgreen;
+    border-radius: 5px;
+    margin-left: 20px;
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+form button:hover{
+    background-color: rgb(30, 100, 30);
+    color: white;
+}
+
+.log-in{
+    display: flex;
+    margin: 20px;
+}
+
+.log-in p{
+    margin-right: 5px;
+    font-size: 1.25rem;
+}
+
+.log-in a{
+    text-decoration: none;
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.log-in a:link{
+    color: forestgreen;
+}
+.log-in a:visited{
+    color: forestgreen;
+}
+
+.log-in a:hover{
+    color: rgb(30, 100, 30);
+}
