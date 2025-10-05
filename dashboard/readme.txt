@@ -1,0 +1,2 @@
+Icons are from https://pictogrammers.com/library/mdi/
+Account picture is from https://www.freepik.com/free-vector/cute-cat-sitting-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated-premium-flat_34733188.htm#fromView=keyword&page=3&position=8&uuid=387c807b-9c1c-473e-b92c-b50e5c490724&query=Cartoon+cat
