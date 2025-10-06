@@ -1,15 +1,24 @@
+function Book(title, author, pages, read){
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
 
-const div01 = document.createElement("div");
-const div02 = document.createElement("div");
-const mainDiv = document.querySelector('.main');
+    this.isRead = function(){
+        if(this.read){
+            return "already read";
+        }
+        else{
+            return("not read yet");
+        }
+    };
 
+    this.info = function(){
+        return title + " by " + author + ", " + pages + " Pages, " + this.isRead();
+    };
+};
 
-console.log(div01);
-console.log(div02);
-console.log(mainDiv);
+const book01 = new Book("Super Title", "John Doe", 10000000, false);
 
-div01.textContent = "Hello World!";
-div02.innerHTML = "<span>Hello World!</span>";
-
-mainDiv.appendChild(div01);
-mainDiv.appendChild(div02);
+console.log(book01.info());
+console.log(Object.getPrototypeOf(book01));

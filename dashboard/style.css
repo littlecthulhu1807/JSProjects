@@ -24,6 +24,7 @@ body{
 }
 
 /* <--------------------header--------------------> */
+/*#region*/
 .header{
     background-color: aliceblue;
     grid-column: 2 / 3;
@@ -55,9 +56,10 @@ body{
     border-radius: 25px;
 
 }
+/*#endregion*/
 
 /* <--------------------sidebar--------------------> */
-/*#sidebar*/
+/*#region*/
 .sidebar{
     background-color: var(--sidebar-color);
     grid-column: 1 / 2;
