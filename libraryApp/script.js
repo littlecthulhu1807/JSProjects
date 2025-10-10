@@ -20,6 +20,9 @@ function Book(title, author, pages, read){
 
 const myLibrary = [];
 const libContainer = document.querySelector(".libContainer");
+const addBookBtn = document.querySelector("#addBookBtn");
+
+const dialogContainer = document.querySelector("#modalContainer");
 
 function addBookToLibrary(title, author, pages, read){
     const book = new Book(title, author, pages, read);
@@ -31,6 +34,14 @@ function displayBooks(element){
     div.classList.add("bookContainer");
     libContainer.appendChild(div);
     div.textContent = element.info();
+}
+
+function bookDialog(){
+    dialogContainer.showModal();
+}
+
+addBookBtn.onclick = function(){
+    bookDialog();
 }
 
 
